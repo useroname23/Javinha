@@ -1,10 +1,9 @@
 public class Jogador {
-    // Atributos
+
     private String nome;
     private int pontuacao;
     private int nivel;
 
-    // Construtor
     public Jogador(String nome) {
         if (nome != null && !nome.isEmpty()) {
             this.nome = nome;
@@ -15,11 +14,9 @@ public class Jogador {
         this.nivel = 1;
     }
 
-    // Métodos para manipular pontuação e nível
     public void aumentarPontuacao(int pontos) {
         if (pontos > 0) {
             this.pontuacao += pontos;
-            // Atualiza o nível se necessário
             atualizarNivel();
         }
     }
@@ -27,23 +24,19 @@ public class Jogador {
     private void atualizarNivel() {
         if (pontuacao >= 100) {
             this.nivel = 2;
-            // Adicione mais lógica para outros níveis aqui
         }
     }
 
-    // Método para subir de nível manualmente
     public void aumentarNivel() {
         this.nivel++;
     }
 
-    // Método para exibir informações do jogador
     public void exibirInformacoes() {
         System.out.println("Nome do jogador: " + nome);
         System.out.println("Pontuação: " + pontuacao);
         System.out.println("Nível: " + nivel);
     }
 
-    // Getters e setters (opcional, dependendo do uso)
     public String getNome() {
         return nome;
     }
